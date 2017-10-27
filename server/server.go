@@ -1,6 +1,8 @@
 package server
 
 import (
+	"os"
+
 	"github.com/gin-gonic/gin"
 	"github.com/shimokp/lime-server/handler"
 )
@@ -15,6 +17,8 @@ func Init() {
 		v1.GET("/", handler.IndexHandler)
 	}
 
-	router.Run(":8080")
+	port := os.Getenv("PORT")
+
+	router.Run(port)
 
 }
