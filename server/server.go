@@ -19,7 +19,7 @@ func Init() {
 
 	v1 := router.Group("/v1")
 	{
-		v1.GET("/", handler.IndexHandler)
+		v1.POST("/users", handler.UsersHandler)
 	}
 
 	port := os.Getenv("PORT")
