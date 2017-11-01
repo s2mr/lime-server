@@ -20,6 +20,7 @@ func Init() {
 	v1 := router.Group("/api/v1")
 	{
 		v1.POST("/friends", handler.FriendsHandler)
+		v1.POST("/chatRooms", handler.ChatRoomsHandler)
 	}
 
 	port := os.Getenv("PORT")
