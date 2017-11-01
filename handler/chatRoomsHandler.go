@@ -29,8 +29,8 @@ func ChatRoomsHandler(c *gin.Context) {
                 "user": {
                     "id": 2,
                     "name": "名前2",
-                    "screenName": "スクリーンネーム1",
-                    "statusText": "ステータス1"
+                    "screenName": "スクリーンネーム2",
+                    "statusText": "ステータス2"
                 },
                 "currentText": "テキスト2"
             },
@@ -39,8 +39,8 @@ func ChatRoomsHandler(c *gin.Context) {
                 "user": {
                     "id": 3,
                     "name": "名前3",
-                    "screenName": "スクリーンネーム1",
-                    "statusText": "ステータス1"
+                    "screenName": "スクリーンネーム3",
+                    "statusText": "ステータス3"
                 },
                 "currentText": "テキスト3"
             },
@@ -49,8 +49,8 @@ func ChatRoomsHandler(c *gin.Context) {
                 "user": {
                     "id": 4,
                     "name": "名前4",
-                    "screenName": "スクリーンネーム1",
-                    "statusText": "ステータス1"
+                    "screenName": "スクリーンネーム4",
+                    "statusText": "ステータス4"
                 },
                 "currentText": "テキスト4"
             }
