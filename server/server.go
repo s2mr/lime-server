@@ -17,9 +17,9 @@ func Init() {
 		root.GET("/", handler.IndexHandler)
 	}
 
-	v1 := router.Group("/v1")
+	v1 := router.Group("/api/v1")
 	{
-		v1.POST("/users", handler.UsersHandler)
+		v1.POST("/friends", handler.FriendsHandler)
 	}
 
 	port := os.Getenv("PORT")

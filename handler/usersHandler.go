@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func UsersHandler(c *gin.Context) {
+func FriendsHandler(c *gin.Context) {
 	log.Printf("%#v", c)
 
 	stubJson := `
