@@ -21,6 +21,7 @@ func Init() {
 	{
 		v1.POST("/friends", handler.FriendsHandler)
 		v1.POST("/chatRooms", handler.ChatRoomsHandler)
+		v1.POST("/chat", handler.ChatHandler)
 	}
 
 	port := os.Getenv("PORT")
