@@ -6,10 +6,12 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"io/ioutil"
 )
 
 func ChatRoomsHandler(c *gin.Context) {
-	log.Printf("%#v", c)
+	bytes, _ := ioutil.ReadAll(c.Request.Body)
+	log.Printf("%s", bytes)
 
 	stubJson := `
 {
