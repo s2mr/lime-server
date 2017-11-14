@@ -5,13 +5,14 @@ import (
 
 	"net/http"
 
-	"github.com/gin-gonic/gin"
 	"io/ioutil"
+
+	"github.com/gin-gonic/gin"
 )
 
 func FriendsHandler(c *gin.Context) {
 	bytes, _ := ioutil.ReadAll(c.Request.Body)
-	log.Printf("%s", bytes)
+	log.Printf("%s\n", bytes)
 
 	stubJson := `
 {
@@ -39,7 +40,6 @@ func FriendsHandler(c *gin.Context) {
     }
 }
 `
-
 
 	c.String(http.StatusOK, stubJson)
 }

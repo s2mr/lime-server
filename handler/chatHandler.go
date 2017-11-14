@@ -1,8 +1,6 @@
 package handler
 
 import (
-	"encoding/json"
-	"io/ioutil"
 	"log"
 	"net/http"
 
@@ -12,18 +10,18 @@ import (
 type Chat struct {
 	Text       string `json:"text"`
 	Time       string `json:"time"`
-	SpeakerId  int64  `json:"speaker-id"`
-	ChatRoomId int64  `json:"chat-room-id"`
+	SpeakerId  string `json:"speaker-id"`
+	ChatRoomId string `json:"chat-room-id"`
 }
 
 func ChatHandler(c *gin.Context) {
-	bytes, _ := ioutil.ReadAll(c.Request.Body)
-	//log.Printf("%s", bytes)
+	text, _ := c.GetQuery("text")
+	time, _ := c.GetQuery("time")
+	speakerId, _ := c.GetQuery("speaker-id")
+	chatRoomId, _ := c.GetQuery("chat-room-id")
+	var chat = Chat{text, time, speakerId, chatRoomId}
 
-	var chat Chat
-
-	json.Unmarshal(bytes, &chat)
-	log.Printf("text: %s, time: %s, speakerId: %d, chatRoomId: %d", chat.Text, chat.Time, chat.SpeakerId, chat.ChatRoomId)
+	log.Printf("text: %s, time: %s, speakerId: %d, chatRoomId: %d\n", chat.Text, chat.Time, chat.SpeakerId, chat.ChatRoomId)
 
 	c.Status(http.StatusOK)
 }

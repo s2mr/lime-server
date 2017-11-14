@@ -1,26 +1,33 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
 	"log"
-	"io/ioutil"
+
+	"github.com/gin-gonic/gin"
 )
+
+type Account struct {
+	Uuid string
+}
 
 func AccountHandler(c *gin.Context) {
 
 	switch c.Request.Method {
 	case "GET":
 		getHandler(c)
-	case"POST":
+		break
+	case "POST":
 		postHandler(c)
+		break
 	}
 }
 
 func getHandler(c *gin.Context) {
-
-	buff, _ :=ioutil.ReadAll(c.Request.Body)
-	log.Println(string(buff))
+	uuid, _ := c.GetQuery("uuid")
+	account := Account{uuid}
+	log.Printf("uuid: %s", account.Uuid)
 
 	stubJson := `
 {
@@ -34,5 +41,5 @@ func getHandler(c *gin.Context) {
 }
 
 func postHandler(c *gin.Context) {
-
+	println("post")
 }
