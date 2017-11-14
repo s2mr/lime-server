@@ -15,13 +15,13 @@ type Chat struct {
 }
 
 func ChatHandler(c *gin.Context) {
-	text, _ := c.GetQuery("text")
-	time, _ := c.GetQuery("time")
-	speakerId, _ := c.GetQuery("speaker-id")
-	chatRoomId, _ := c.GetQuery("chat-room-id")
+	text, _ := c.GetPostForm("text")
+	time, _ := c.GetPostForm("time")
+	speakerId, _ := c.GetPostForm("speaker-id")
+	chatRoomId, _ := c.GetPostForm("chat-room-id")
 	var chat = Chat{text, time, speakerId, chatRoomId}
 
-	log.Printf("text: %s, time: %s, speakerId: %d, chatRoomId: %d\n", chat.Text, chat.Time, chat.SpeakerId, chat.ChatRoomId)
+	log.Printf("text: %s, time: %s, speakerId: %s, chatRoomId: %s\n", chat.Text, chat.Time, chat.SpeakerId, chat.ChatRoomId)
 
 	c.Status(http.StatusOK)
 }
