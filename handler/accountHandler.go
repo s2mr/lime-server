@@ -3,6 +3,8 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"log"
+	"io/ioutil"
 )
 
 func AccountHandler(c *gin.Context) {
@@ -16,6 +18,10 @@ func AccountHandler(c *gin.Context) {
 }
 
 func getHandler(c *gin.Context) {
+
+	buff, _ :=ioutil.ReadAll(c.Request.Body)
+	log.Println(string(buff))
+
 	stubJson := `
 {
     "data": {
