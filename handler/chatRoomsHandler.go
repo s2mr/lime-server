@@ -21,41 +21,21 @@ func ChatRoomsHandler(c *gin.Context) {
                 "id": 1,
                 "user": {
                     "id": 1,
-                    "name": "名前1",
-                    "screenName": "スクリーンネーム1",
+                    "name": "たろー",
+                    "screenName": "たろー",
                     "statusText": "ステータス1"
                 },
-                "currentText": "テキスト1"
+                "currentText": "この本まじ面白くて、読み出すと本当止まらないんだよね笑今度かそっか？😉"
             },
             {
                 "id": 2,
                 "user": {
                     "id": 2,
-                    "name": "名前2",
-                    "screenName": "スクリーンネーム2",
-                    "statusText": "ステータス2"
+                    "name": "対話BOT",
+                    "screenName": "対話BOT",
+                    "statusText": "対話BOT"
                 },
-                "currentText": "テキスト2"
-            },
-            {
-                "id": 3,
-                "user": {
-                    "id": 3,
-                    "name": "名前3",
-                    "screenName": "スクリーンネーム3",
-                    "statusText": "ステータス3"
-                },
-                "currentText": "テキスト3"
-            },
-            {
-                "id": 4,
-                "user": {
-                    "id": 4,
-                    "name": "名前4",
-                    "screenName": "スクリーンネーム4",
-                    "statusText": "ステータス4"
-                },
-                "currentText": "テキスト4"
+                "currentText": ""
             }
         ]
     }
